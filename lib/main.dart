@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:modulos/kernel/widgets/menu.dart';
-import 'package:modulos/kernel/widgets/perfil.dart';
-import 'package:modulos/kernel/widgets/splash.dart';
+import 'package:learning_app_10a/kernel/widgets/navigation/menu.dart';
+import 'package:learning_app_10a/kernel/widgets/splash/splash.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,14 +12,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, //quita la etiquet roja de "DEBUG" de las vistas
       initialRoute: '/',
       routes: {
-        '/': (context) => const Splash(),
-        '/menu': (context) => const Menu(),
-        'profile': (context) => const Profile(),
-      
+        '/': (context)=> const Splash(title: "cargando..."),
+        '/menu':(context) => const Menu(),
       },
     );
-  }
+  } 
 }
+
